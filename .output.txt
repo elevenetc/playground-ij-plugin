@@ -1,0 +1,920 @@
+build			build.gradle.kts	gradle			gradle.properties	gradlew			gradlew.bat		settings.gradle.kts	src
+
+./build:
+idea-sandbox		instrumented		libs			patchedPluginXmlFiles	reports			resources		tmp
+
+./build/idea-sandbox:
+config	plugins	system
+
+./build/idea-sandbox/config:
+app-internal-state.db		early-access-registry.txt	event-log-metadata		options				plugin_PCWMP.license		ssl				updatedBrokenPlugins.db
+
+./build/idea-sandbox/config/event-log-metadata:
+fus	mp
+
+./build/idea-sandbox/config/event-log-metadata/fus:
+events-scheme.json
+
+./build/idea-sandbox/config/event-log-metadata/mp:
+events-scheme.json
+
+./build/idea-sandbox/config/options:
+colors.scheme.xml		editor-font.xml			log-categories.xml		path.macros.xml			settingsSync.xml		usage.statistics.xml
+console-font.xml		editor.xml			other.xml			profilerRunConfigurations.xml	updates.xml			window.state.xml
+
+./build/idea-sandbox/config/ssl:
+
+./build/idea-sandbox/plugins:
+playground-ij-plugin
+
+./build/idea-sandbox/plugins/playground-ij-plugin:
+lib
+
+./build/idea-sandbox/plugins/playground-ij-plugin/lib:
+instrumented-playground-ij-plugin-1.0-SNAPSHOT.jar
+
+./build/idea-sandbox/system:
+LocalHistory	caches		icon-cache	index		log		plugins		splash		tmp
+
+./build/idea-sandbox/system/LocalHistory:
+changes.storageData		changes.storageRecordIndex
+
+./build/idea-sandbox/system/caches:
+attributes.dat		attributes_enums.dat	content.dat		content.dat.hashToId	names.dat.mmap		records.dat
+
+./build/idea-sandbox/system/icon-cache:
+icon.db			icon.db.keystream	icon.db.keystream.len	icon.db.len		icon.db.values		icon.db_i		icon.db_i.len
+
+./build/idea-sandbox/system/index:
+bytecodeanalysis								org.jetbrains.kotlin.idea.vfilefinder.kotlinstdlibindex				sih.kotlinprobablycontractedfunctionshortnameindex
+com.intellij.uidesigner.formclassindex						registered									sih.kotlinprobablynothingfunctionshortnameindex
+dirty-file-ids									relaxsymbolindex								sih.kotlinprobablynothingpropertyshortnameindex
+domfileindex									rep.names									sih.kotlintoplevelextensionsbyreceivertypeindex
+editorconfig.index.name								rep.names.keystream.len								sih.kotlintoplevelfunctionbypackageindex
+fileincludes									rep.names.len									sih.kotlintoplevelpropertybypackageindex
+filenameindex									rep.names_i.len									sih.kotlintopleveltypealiasbypackageindex
+filetypes									schematypeinheritance								sih.kotlintypealiasbyexpansionshortnameindex
+frameworkdetectionindex								shared_indexes									sih.markdown.header
+html5.custom.attributes.index							sih.dom.elementclass								sih.markdown.header.anchor
+htmltagidindex									sih.dom.namespacekey								sih.org.jetbrains.kotlin.idea.stubindex.kotlinannotationsindex
+idindex										sih.filenameindex								sih.org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex
+indices.config									sih.filetypes									sih.org.jetbrains.kotlin.idea.stubindex.kotlinexactpackagesindex
+indices.enum									sih.gr.annot.members								sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadefqnameindex
+java.auto.module.name								sih.gr.annot.method.name							sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadeshortnameindex
+java.binary.plus.expression							sih.gr.anonymous.class								sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilepartclassindex
+java.fun.expression								sih.gr.class.fqn.s								sih.org.jetbrains.kotlin.idea.stubindex.kotlinfullclassnameindex
+java.null.method.argument							sih.gr.class.super								sih.org.jetbrains.kotlin.idea.stubindex.kotlinfunctionshortnameindex
+java.source.module.name								sih.gr.field.name								sih.org.jetbrains.kotlin.idea.stubindex.kotlininnertypealiasclassidindex
+javafx.custom.component								sih.gr.method.name								sih.org.jetbrains.kotlin.idea.stubindex.kotlinjvmnameannotationindex
+javafx.id.name									sih.gr.script.class								sih.org.jetbrains.kotlin.idea.stubindex.kotlinmultifileclasspartindex
+javafxcontrollerclassindex							sih.gr.script.fqn.s								sih.org.jetbrains.kotlin.idea.stubindex.kotlinpropertyshortnameindex
+json.file.root.values								sih.java.annotations								sih.org.jetbrains.kotlin.idea.stubindex.kotlinscriptfqnindex
+kotlinbinaryroottopackageindex							sih.java.anonymous.baseref							sih.org.jetbrains.kotlin.idea.stubindex.kotlinsubclassobjectnameindex
+kotlinpackagesourcesmembernamesindex						sih.java.auto.module.name							sih.org.jetbrains.kotlin.idea.stubindex.kotlinsuperclassindex
+kotlintoplevelcallablebypackageshortnameindex					sih.java.class.extlist								sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelclassbypackageindex
+kotlintoplevelclasslikedeclarationbypackageshortnameindex			sih.java.class.fqn								sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelfunctionfqnnameindex
+org.jetbrains.kotlin.idea.versions.kotlinjsmetadataversionindex			sih.java.class.shortname							sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelpropertyfqnnameindex
+org.jetbrains.kotlin.idea.versions.kotlinjvmmetadataversionindex		sih.java.field.name								sih.org.jetbrains.kotlin.idea.stubindex.kotlintopleveltypealiasfqnameindex
+org.jetbrains.kotlin.idea.vfilefinder.klibmetafileindex				sih.java.method.name								sih.org.jetbrains.kotlin.idea.stubindex.kotlintypealiasshortnameindex
+org.jetbrains.kotlin.idea.vfilefinder.kotlinbuiltinsmetadataindex		sih.java.method.parameter.types							sih.properties.index
+org.jetbrains.kotlin.idea.vfilefinder.kotlinclassfileindex			sih.java.module.name								stubs
+org.jetbrains.kotlin.idea.vfilefinder.kotlinjavascriptmetafileindex		sih.java.unnamed.class								todoindex
+org.jetbrains.kotlin.idea.vfilefinder.kotlinjvmmoduleannotationsindex		sih.jvm.static.member.name							trigram.index
+org.jetbrains.kotlin.idea.vfilefinder.kotlinmetadatafileindex			sih.jvm.static.member.type							xmlnamespaces
+org.jetbrains.kotlin.idea.vfilefinder.kotlinmetadatafilepackageindex		sih.kotlin.primeindexkey							xmlproperties
+org.jetbrains.kotlin.idea.vfilefinder.kotlinmodulemappingindex			sih.kotlinextensionsinobjectsbyreceivertypeindex				xmltagnames
+org.jetbrains.kotlin.idea.vfilefinder.kotlinpartialpackagenamesindex		sih.kotlinfilefacadeclassbypackageindex						yaml.keys.name
+org.jetbrains.kotlin.idea.vfilefinder.kotlinshortclassnamefileindex		sih.kotlinoverridableinternalmembersshortnameindex
+
+./build/idea-sandbox/system/index/bytecodeanalysis:
+bytecodeAnalysis.storage		bytecodeAnalysis.storage.len		bytecodeAnalysis.ver			bytecodeAnalysis_inputs.len
+bytecodeAnalysis.storage.keystream.len	bytecodeAnalysis.storage_i.len		bytecodeAnalysis_inputs			bytecodeAnalysis_inputs_i.len
+
+./build/idea-sandbox/system/index/com.intellij.uidesigner.formclassindex:
+com.intellij.uiDesigner.FormClassIndex.storage			com.intellij.uiDesigner.FormClassIndex.storage_i.len		com.intellij.uiDesigner.FormClassIndex_inputs.len
+com.intellij.uiDesigner.FormClassIndex.storage.keystream.len	com.intellij.uiDesigner.FormClassIndex.ver			com.intellij.uiDesigner.FormClassIndex_inputs_i.len
+com.intellij.uiDesigner.FormClassIndex.storage.len		com.intellij.uiDesigner.FormClassIndex_inputs
+
+./build/idea-sandbox/system/index/domfileindex:
+DomFileIndex.storage			DomFileIndex.storage.len		DomFileIndex.ver			DomFileIndex_inputs.len
+DomFileIndex.storage.keystream.len	DomFileIndex.storage_i.len		DomFileIndex_inputs			DomFileIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/editorconfig.index.name:
+editorconfig.index.name.storage			editorconfig.index.name.storage.len		editorconfig.index.name.ver			editorconfig.index.name_inputs.len
+editorconfig.index.name.storage.keystream.len	editorconfig.index.name.storage_i.len		editorconfig.index.name_inputs			editorconfig.index.name_inputs_i.len
+
+./build/idea-sandbox/system/index/fileincludes:
+fileIncludes.storage			fileIncludes.storage.len		fileIncludes.ver			fileIncludes_inputs.len
+fileIncludes.storage.keystream.len	fileIncludes.storage_i.len		fileIncludes_inputs			fileIncludes_inputs_i.len
+
+./build/idea-sandbox/system/index/filenameindex:
+FilenameIndex.ver
+
+./build/idea-sandbox/system/index/filetypes:
+fileType.enum		filetypes.index.mmap	filetypes.ver
+
+./build/idea-sandbox/system/index/frameworkdetectionindex:
+FrameworkDetectionIndex.storage			FrameworkDetectionIndex.storage.len		FrameworkDetectionIndex.ver			FrameworkDetectionIndex_inputs.len
+FrameworkDetectionIndex.storage.keystream.len	FrameworkDetectionIndex.storage_i.len		FrameworkDetectionIndex_inputs			FrameworkDetectionIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/html5.custom.attributes.index:
+html5.custom.attributes.index.storage			html5.custom.attributes.index.storage.len		html5.custom.attributes.index.ver			html5.custom.attributes.index_inputs.len
+html5.custom.attributes.index.storage.keystream.len	html5.custom.attributes.index.storage_i.len		html5.custom.attributes.index_inputs			html5.custom.attributes.index_inputs_i.len
+
+./build/idea-sandbox/system/index/htmltagidindex:
+HtmlTagIdIndex.storage			HtmlTagIdIndex.storage.len		HtmlTagIdIndex.ver			HtmlTagIdIndex_inputs.len
+HtmlTagIdIndex.storage.keystream.len	HtmlTagIdIndex.storage_i.len		HtmlTagIdIndex_inputs			HtmlTagIdIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/idindex:
+IdIndex.storage		IdIndex.storage.len	IdIndex.storage_i.len	IdIndex.ver		IdIndex_inputs		IdIndex_inputs.len	IdIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/java.auto.module.name:
+java.auto.module.name.storage			java.auto.module.name.storage.len		java.auto.module.name.ver			java.auto.module.name_inputs.len
+java.auto.module.name.storage.keystream.len	java.auto.module.name.storage_i.len		java.auto.module.name_inputs			java.auto.module.name_inputs_i.len
+
+./build/idea-sandbox/system/index/java.binary.plus.expression:
+java.binary.plus.expression.storage		java.binary.plus.expression.storage_i.len	java.binary.plus.expression_inputs		java.binary.plus.expression_inputs_i.len
+java.binary.plus.expression.storage.len		java.binary.plus.expression.ver			java.binary.plus.expression_inputs.len
+
+./build/idea-sandbox/system/index/java.fun.expression:
+java.fun.expression.storage			java.fun.expression.storage.len			java.fun.expression.ver				java.fun.expression_inputs.len
+java.fun.expression.storage.keystream.len	java.fun.expression.storage_i.len		java.fun.expression_inputs			java.fun.expression_inputs_i.len
+
+./build/idea-sandbox/system/index/java.null.method.argument:
+java.null.method.argument.storage		java.null.method.argument.storage.len		java.null.method.argument.ver			java.null.method.argument_inputs.len
+java.null.method.argument.storage.keystream.len	java.null.method.argument.storage_i.len		java.null.method.argument_inputs		java.null.method.argument_inputs_i.len
+
+./build/idea-sandbox/system/index/java.source.module.name:
+java.source.module.name.storage			java.source.module.name.storage.len		java.source.module.name.ver			java.source.module.name_inputs.len
+java.source.module.name.storage.keystream.len	java.source.module.name.storage_i.len		java.source.module.name_inputs			java.source.module.name_inputs_i.len
+
+./build/idea-sandbox/system/index/javafx.custom.component:
+javafx.custom.component.storage			javafx.custom.component.storage.len		javafx.custom.component.ver			javafx.custom.component_inputs.len
+javafx.custom.component.storage.keystream.len	javafx.custom.component.storage_i.len		javafx.custom.component_inputs			javafx.custom.component_inputs_i.len
+
+./build/idea-sandbox/system/index/javafx.id.name:
+javafx.id.name.storage			javafx.id.name.storage.len		javafx.id.name.ver			javafx.id.name_inputs.len
+javafx.id.name.storage.keystream.len	javafx.id.name.storage_i.len		javafx.id.name_inputs			javafx.id.name_inputs_i.len
+
+./build/idea-sandbox/system/index/javafxcontrollerclassindex:
+JavaFxControllerClassIndex.storage			JavaFxControllerClassIndex.storage.len			JavaFxControllerClassIndex.ver				JavaFxControllerClassIndex_inputs.len
+JavaFxControllerClassIndex.storage.keystream.len	JavaFxControllerClassIndex.storage_i.len		JavaFxControllerClassIndex_inputs			JavaFxControllerClassIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/json.file.root.values:
+json.file.root.values.storage			json.file.root.values.storage.len		json.file.root.values.ver			json.file.root.values_inputs.len
+json.file.root.values.storage.keystream.len	json.file.root.values.storage_i.len		json.file.root.values_inputs			json.file.root.values_inputs_i.len
+
+./build/idea-sandbox/system/index/kotlinbinaryroottopackageindex:
+KotlinBinaryRootToPackageIndex.storage			KotlinBinaryRootToPackageIndex.storage.len		KotlinBinaryRootToPackageIndex.ver			KotlinBinaryRootToPackageIndex_inputs.len
+KotlinBinaryRootToPackageIndex.storage.keystream.len	KotlinBinaryRootToPackageIndex.storage_i.len		KotlinBinaryRootToPackageIndex_inputs			KotlinBinaryRootToPackageIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/kotlinpackagesourcesmembernamesindex:
+KotlinPackageSourcesMemberNamesIndex.storage			KotlinPackageSourcesMemberNamesIndex.storage_i.len		KotlinPackageSourcesMemberNamesIndex_inputs.len
+KotlinPackageSourcesMemberNamesIndex.storage.keystream.len	KotlinPackageSourcesMemberNamesIndex.ver			KotlinPackageSourcesMemberNamesIndex_inputs_i.len
+KotlinPackageSourcesMemberNamesIndex.storage.len		KotlinPackageSourcesMemberNamesIndex_inputs
+
+./build/idea-sandbox/system/index/kotlintoplevelcallablebypackageshortnameindex:
+KotlinTopLevelCallableByPackageShortNameIndex.project.len		KotlinTopLevelCallableByPackageShortNameIndex.storage.len		KotlinTopLevelCallableByPackageShortNameIndex_inputs
+KotlinTopLevelCallableByPackageShortNameIndex.storage			KotlinTopLevelCallableByPackageShortNameIndex.storage_i.len		KotlinTopLevelCallableByPackageShortNameIndex_inputs.len
+KotlinTopLevelCallableByPackageShortNameIndex.storage.keystream.len	KotlinTopLevelCallableByPackageShortNameIndex.ver			KotlinTopLevelCallableByPackageShortNameIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/kotlintoplevelclasslikedeclarationbypackageshortnameindex:
+KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.project.len		KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.storage.len		KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_inputs
+KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.storage		KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.storage_i.len		KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_inputs.len
+KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.storage.keystream.len	KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex.ver			KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.versions.kotlinjsmetadataversionindex:
+org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex.storage			org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex.ver
+org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex.storage.keystream.len	org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs
+org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex.storage.len		org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs.len
+org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex.storage_i.len		org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.versions.kotlinjvmmetadataversionindex:
+org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex.storage		org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex.ver
+org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex.storage.keystream.len	org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs
+org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex.storage.len		org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs.len
+org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex.storage_i.len		org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.klibmetafileindex:
+org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex.ver			org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_inputs_i.len
+org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_inputs
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinbuiltinsmetadataindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex.storage		org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinclassfileindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex.storage.len			org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinjavascriptmetafileindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex.storage.len			org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinjvmmoduleannotationsindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinmetadatafileindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinmetadatafilepackageindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinmodulemappingindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinpartialpackagenamesindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.project.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_inputs_i.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex.storage_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinshortclassnamefileindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.project.len			org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.ver
+org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_inputs
+org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.storage.len			org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_inputs_i.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex.storage_i.len
+
+./build/idea-sandbox/system/index/org.jetbrains.kotlin.idea.vfilefinder.kotlinstdlibindex:
+org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex.storage			org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex.storage_i.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_inputs.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex.storage.keystream.len	org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex.ver			org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_inputs_i.len
+org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex.storage.len		org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_inputs
+
+./build/idea-sandbox/system/index/relaxsymbolindex:
+RelaxSymbolIndex.storage		RelaxSymbolIndex.storage.len		RelaxSymbolIndex.ver			RelaxSymbolIndex_inputs.len
+RelaxSymbolIndex.storage.keystream.len	RelaxSymbolIndex.storage_i.len		RelaxSymbolIndex_inputs			RelaxSymbolIndex_inputs_i.len
+
+./build/idea-sandbox/system/index/schematypeinheritance:
+SchemaTypeInheritance.storage			SchemaTypeInheritance.storage.len		SchemaTypeInheritance.ver			SchemaTypeInheritance_inputs.len
+SchemaTypeInheritance.storage.keystream.len	SchemaTypeInheritance.storage_i.len		SchemaTypeInheritance_inputs			SchemaTypeInheritance_inputs_i.len
+
+./build/idea-sandbox/system/index/shared_indexes:
+descriptors									sih.Trigram.Index								sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex
+forward.index.versions								sih.XmlNamespaces								sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex
+shared-index.chunks								sih.XmlTagNames									sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex
+sih.DomFileIndex								sih.bytecodeAnalysis								sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex
+sih.FrameworkDetectionIndex							sih.com.intellij.uiDesigner.FormClassIndex					sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex
+sih.HtmlTagIdIndex								sih.editorconfig.index.name							sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex
+sih.IdIndex									sih.fileIncludes								sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex
+sih.JavaFxControllerClassIndex							sih.html5.custom.attributes.index						sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex
+sih.KotlinBinaryRootToPackageIndex						sih.java.binary.plus.expression							sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex
+sih.KotlinPackageSourcesMemberNamesIndex					sih.java.fun.expression								sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex
+sih.KotlinTopLevelCallableByPackageShortNameIndex				sih.java.null.method.argument							sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex
+sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex			sih.java.source.module.name							sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex
+sih.RelaxSymbolIndex								sih.javafx.custom.component							sih.xmlProperties
+sih.SchemaTypeInheritance							sih.javafx.id.name								sih.yaml.keys.name
+sih.Stubs									sih.json.file.root.values							version
+sih.TodoIndex									sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex
+
+./build/idea-sandbox/system/index/shared_indexes/sih.DomFileIndex:
+sih.DomFileIndex_storage.storage		sih.DomFileIndex_storage.storage.keystream.len	sih.DomFileIndex_storage.storage.len		sih.DomFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.FrameworkDetectionIndex:
+sih.FrameworkDetectionIndex_storage.storage			sih.FrameworkDetectionIndex_storage.storage.len
+sih.FrameworkDetectionIndex_storage.storage.keystream.len	sih.FrameworkDetectionIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.HtmlTagIdIndex:
+sih.HtmlTagIdIndex_storage.storage			sih.HtmlTagIdIndex_storage.storage.keystream.len	sih.HtmlTagIdIndex_storage.storage.len			sih.HtmlTagIdIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.IdIndex:
+sih.IdIndex_storage.storage			sih.IdIndex_storage.storage.keystream.len	sih.IdIndex_storage.storage.len			sih.IdIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.JavaFxControllerClassIndex:
+sih.JavaFxControllerClassIndex_storage.storage			sih.JavaFxControllerClassIndex_storage.storage.len
+sih.JavaFxControllerClassIndex_storage.storage.keystream.len	sih.JavaFxControllerClassIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.KotlinBinaryRootToPackageIndex:
+sih.KotlinBinaryRootToPackageIndex_storage.storage			sih.KotlinBinaryRootToPackageIndex_storage.storage.len
+sih.KotlinBinaryRootToPackageIndex_storage.storage.keystream.len	sih.KotlinBinaryRootToPackageIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.KotlinPackageSourcesMemberNamesIndex:
+sih.KotlinPackageSourcesMemberNamesIndex_storage.storage		sih.KotlinPackageSourcesMemberNamesIndex_storage.storage.len
+sih.KotlinPackageSourcesMemberNamesIndex_storage.storage.keystream.len	sih.KotlinPackageSourcesMemberNamesIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.KotlinTopLevelCallableByPackageShortNameIndex:
+sih.KotlinTopLevelCallableByPackageShortNameIndex_storage.storage		sih.KotlinTopLevelCallableByPackageShortNameIndex_storage.storage.len
+sih.KotlinTopLevelCallableByPackageShortNameIndex_storage.storage.keystream.len	sih.KotlinTopLevelCallableByPackageShortNameIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex:
+sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_storage.storage			sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_storage.storage.len
+sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_storage.storage.keystream.len	sih.KotlinTopLevelClassLikeDeclarationByPackageShortNameIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.RelaxSymbolIndex:
+sih.RelaxSymbolIndex_storage.storage			sih.RelaxSymbolIndex_storage.storage.keystream.len	sih.RelaxSymbolIndex_storage.storage.len		sih.RelaxSymbolIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.SchemaTypeInheritance:
+sih.SchemaTypeInheritance_storage.storage		sih.SchemaTypeInheritance_storage.storage.keystream.len	sih.SchemaTypeInheritance_storage.storage.len		sih.SchemaTypeInheritance_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.Stubs:
+sih.Stubs_storage.storage		sih.Stubs_storage.storage.keystream.len	sih.Stubs_storage.storage.len		sih.Stubs_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.TodoIndex:
+sih.TodoIndex_storage.storage			sih.TodoIndex_storage.storage.keystream.len	sih.TodoIndex_storage.storage.len		sih.TodoIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.Trigram.Index:
+sih.Trigram.Index_storage.storage		sih.Trigram.Index_storage.storage.keystream.len	sih.Trigram.Index_storage.storage.len		sih.Trigram.Index_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.XmlNamespaces:
+sih.XmlNamespaces_storage.storage		sih.XmlNamespaces_storage.storage.keystream.len	sih.XmlNamespaces_storage.storage.len		sih.XmlNamespaces_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.XmlTagNames:
+sih.XmlTagNames_storage.storage			sih.XmlTagNames_storage.storage.keystream.len	sih.XmlTagNames_storage.storage.len		sih.XmlTagNames_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.bytecodeAnalysis:
+sih.bytecodeAnalysis_storage.storage			sih.bytecodeAnalysis_storage.storage.keystream.len	sih.bytecodeAnalysis_storage.storage.len		sih.bytecodeAnalysis_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.com.intellij.uiDesigner.FormClassIndex:
+sih.com.intellij.uiDesigner.FormClassIndex_storage.storage			sih.com.intellij.uiDesigner.FormClassIndex_storage.storage.len
+sih.com.intellij.uiDesigner.FormClassIndex_storage.storage.keystream.len	sih.com.intellij.uiDesigner.FormClassIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.editorconfig.index.name:
+sih.editorconfig.index.name_storage.storage			sih.editorconfig.index.name_storage.storage.len
+sih.editorconfig.index.name_storage.storage.keystream.len	sih.editorconfig.index.name_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.fileIncludes:
+sih.fileIncludes_storage.storage		sih.fileIncludes_storage.storage.keystream.len	sih.fileIncludes_storage.storage.len		sih.fileIncludes_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.html5.custom.attributes.index:
+sih.html5.custom.attributes.index_storage.storage		sih.html5.custom.attributes.index_storage.storage.len
+sih.html5.custom.attributes.index_storage.storage.keystream.len	sih.html5.custom.attributes.index_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.java.binary.plus.expression:
+sih.java.binary.plus.expression_storage.storage			sih.java.binary.plus.expression_storage.storage.len
+sih.java.binary.plus.expression_storage.storage.keystream.len	sih.java.binary.plus.expression_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.java.fun.expression:
+sih.java.fun.expression_storage.storage			sih.java.fun.expression_storage.storage.keystream.len	sih.java.fun.expression_storage.storage.len		sih.java.fun.expression_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.java.null.method.argument:
+sih.java.null.method.argument_storage.storage			sih.java.null.method.argument_storage.storage.len
+sih.java.null.method.argument_storage.storage.keystream.len	sih.java.null.method.argument_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.java.source.module.name:
+sih.java.source.module.name_storage.storage			sih.java.source.module.name_storage.storage.len
+sih.java.source.module.name_storage.storage.keystream.len	sih.java.source.module.name_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.javafx.custom.component:
+sih.javafx.custom.component_storage.storage			sih.javafx.custom.component_storage.storage.len
+sih.javafx.custom.component_storage.storage.keystream.len	sih.javafx.custom.component_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.javafx.id.name:
+sih.javafx.id.name_storage.storage			sih.javafx.id.name_storage.storage.keystream.len	sih.javafx.id.name_storage.storage.len			sih.javafx.id.name_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.json.file.root.values:
+sih.json.file.root.values_storage.storage		sih.json.file.root.values_storage.storage.keystream.len	sih.json.file.root.values_storage.storage.len		sih.json.file.root.values_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex:
+sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage			sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.versions.KotlinJsMetadataVersionIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex:
+sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage			sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.versions.KotlinJvmMetadataVersionIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KlibMetaFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinBuiltInsMetadataIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinClassFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJavaScriptMetaFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage		sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinJvmModuleAnnotationsIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage		sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage		sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinMetadataFilePackageIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinModuleMappingIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_storage.storage		sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinPartialPackageNamesIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinShortClassNameFileIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex:
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage			sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage.len
+sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage.keystream.len	sih.org.jetbrains.kotlin.idea.vfilefinder.KotlinStdlibIndex_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.xmlProperties:
+sih.xmlProperties_storage.storage		sih.xmlProperties_storage.storage.keystream.len	sih.xmlProperties_storage.storage.len		sih.xmlProperties_storage.storage_i.len
+
+./build/idea-sandbox/system/index/shared_indexes/sih.yaml.keys.name:
+sih.yaml.keys.name_storage.storage			sih.yaml.keys.name_storage.storage.keystream.len	sih.yaml.keys.name_storage.storage.len			sih.yaml.keys.name_storage.storage_i.len
+
+./build/idea-sandbox/system/index/sih.dom.elementclass:
+
+./build/idea-sandbox/system/index/sih.dom.namespacekey:
+
+./build/idea-sandbox/system/index/sih.filenameindex:
+
+./build/idea-sandbox/system/index/sih.filetypes:
+
+./build/idea-sandbox/system/index/sih.gr.annot.members:
+
+./build/idea-sandbox/system/index/sih.gr.annot.method.name:
+
+./build/idea-sandbox/system/index/sih.gr.anonymous.class:
+
+./build/idea-sandbox/system/index/sih.gr.class.fqn.s:
+
+./build/idea-sandbox/system/index/sih.gr.class.super:
+
+./build/idea-sandbox/system/index/sih.gr.field.name:
+
+./build/idea-sandbox/system/index/sih.gr.method.name:
+
+./build/idea-sandbox/system/index/sih.gr.script.class:
+
+./build/idea-sandbox/system/index/sih.gr.script.fqn.s:
+
+./build/idea-sandbox/system/index/sih.java.annotations:
+
+./build/idea-sandbox/system/index/sih.java.anonymous.baseref:
+
+./build/idea-sandbox/system/index/sih.java.auto.module.name:
+
+./build/idea-sandbox/system/index/sih.java.class.extlist:
+
+./build/idea-sandbox/system/index/sih.java.class.fqn:
+
+./build/idea-sandbox/system/index/sih.java.class.shortname:
+
+./build/idea-sandbox/system/index/sih.java.field.name:
+
+./build/idea-sandbox/system/index/sih.java.method.name:
+
+./build/idea-sandbox/system/index/sih.java.method.parameter.types:
+
+./build/idea-sandbox/system/index/sih.java.module.name:
+
+./build/idea-sandbox/system/index/sih.java.unnamed.class:
+
+./build/idea-sandbox/system/index/sih.jvm.static.member.name:
+
+./build/idea-sandbox/system/index/sih.jvm.static.member.type:
+
+./build/idea-sandbox/system/index/sih.kotlin.primeindexkey:
+
+./build/idea-sandbox/system/index/sih.kotlinextensionsinobjectsbyreceivertypeindex:
+
+./build/idea-sandbox/system/index/sih.kotlinfilefacadeclassbypackageindex:
+
+./build/idea-sandbox/system/index/sih.kotlinoverridableinternalmembersshortnameindex:
+
+./build/idea-sandbox/system/index/sih.kotlinprobablycontractedfunctionshortnameindex:
+
+./build/idea-sandbox/system/index/sih.kotlinprobablynothingfunctionshortnameindex:
+
+./build/idea-sandbox/system/index/sih.kotlinprobablynothingpropertyshortnameindex:
+
+./build/idea-sandbox/system/index/sih.kotlintoplevelextensionsbyreceivertypeindex:
+
+./build/idea-sandbox/system/index/sih.kotlintoplevelfunctionbypackageindex:
+
+./build/idea-sandbox/system/index/sih.kotlintoplevelpropertybypackageindex:
+
+./build/idea-sandbox/system/index/sih.kotlintopleveltypealiasbypackageindex:
+
+./build/idea-sandbox/system/index/sih.kotlintypealiasbyexpansionshortnameindex:
+
+./build/idea-sandbox/system/index/sih.markdown.header:
+
+./build/idea-sandbox/system/index/sih.markdown.header.anchor:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinannotationsindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinexactpackagesindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadefqnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadeshortnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinfilepartclassindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinfullclassnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinfunctionshortnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlininnertypealiasclassidindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinjvmnameannotationindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinmultifileclasspartindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinpropertyshortnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinscriptfqnindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinsubclassobjectnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlinsuperclassindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelclassbypackageindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelfunctionfqnnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlintoplevelpropertyfqnnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlintopleveltypealiasfqnameindex:
+
+./build/idea-sandbox/system/index/sih.org.jetbrains.kotlin.idea.stubindex.kotlintypealiasshortnameindex:
+
+./build/idea-sandbox/system/index/sih.properties.index:
+
+./build/idea-sandbox/system/index/stubs:
+Stubs.storage								java.method.name							org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex
+Stubs.storage.len							java.method.parameter.types						org.jetbrains.kotlin.idea.stubindex.kotlinexactpackagesindex
+Stubs.storage_i.len							java.module.name							org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadefqnameindex
+Stubs.ver								java.unnamed.class							org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadeshortnameindex
+dom.elementclass							jvm.static.member.name							org.jetbrains.kotlin.idea.stubindex.kotlinfilepartclassindex
+dom.namespacekey							jvm.static.member.type							org.jetbrains.kotlin.idea.stubindex.kotlinfullclassnameindex
+gr.annot.members							kotlin.primeindexkey							org.jetbrains.kotlin.idea.stubindex.kotlinfunctionshortnameindex
+gr.annot.method.name							kotlinextensionsinobjectsbyreceivertypeindex				org.jetbrains.kotlin.idea.stubindex.kotlininnertypealiasclassidindex
+gr.anonymous.class							kotlinfilefacadeclassbypackageindex					org.jetbrains.kotlin.idea.stubindex.kotlinjvmnameannotationindex
+gr.class.fqn.s								kotlinoverridableinternalmembersshortnameindex				org.jetbrains.kotlin.idea.stubindex.kotlinmultifileclasspartindex
+gr.class.super								kotlinprobablycontractedfunctionshortnameindex				org.jetbrains.kotlin.idea.stubindex.kotlinpropertyshortnameindex
+gr.field.name								kotlinprobablynothingfunctionshortnameindex				org.jetbrains.kotlin.idea.stubindex.kotlinscriptfqnindex
+gr.method.name								kotlinprobablynothingpropertyshortnameindex				org.jetbrains.kotlin.idea.stubindex.kotlinsubclassobjectnameindex
+gr.script.class								kotlintoplevelextensionsbyreceivertypeindex				org.jetbrains.kotlin.idea.stubindex.kotlinsuperclassindex
+gr.script.fqn.s								kotlintoplevelfunctionbypackageindex					org.jetbrains.kotlin.idea.stubindex.kotlintoplevelclassbypackageindex
+java.annotations							kotlintoplevelpropertybypackageindex					org.jetbrains.kotlin.idea.stubindex.kotlintoplevelfunctionfqnnameindex
+java.anonymous.baseref							kotlintopleveltypealiasbypackageindex					org.jetbrains.kotlin.idea.stubindex.kotlintoplevelpropertyfqnnameindex
+java.class.extlist							kotlintypealiasbyexpansionshortnameindex				org.jetbrains.kotlin.idea.stubindex.kotlintopleveltypealiasfqnameindex
+java.class.fqn								markdown.header								org.jetbrains.kotlin.idea.stubindex.kotlintypealiasshortnameindex
+java.class.shortname							markdown.header.anchor							properties.index
+java.field.name								org.jetbrains.kotlin.idea.stubindex.kotlinannotationsindex
+
+./build/idea-sandbox/system/index/stubs/dom.elementclass:
+dom.elementClass.storage		dom.elementClass.storage.keystream.len	dom.elementClass.storage.len		dom.elementClass.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/dom.namespacekey:
+dom.namespaceKey.storage		dom.namespaceKey.storage.keystream.len	dom.namespaceKey.storage.len		dom.namespaceKey.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.annot.members:
+gr.annot.members.storage		gr.annot.members.storage.keystream.len	gr.annot.members.storage.len		gr.annot.members.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.annot.method.name:
+gr.annot.method.name.storage			gr.annot.method.name.storage.keystream.len	gr.annot.method.name.storage.len		gr.annot.method.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.anonymous.class:
+gr.anonymous.class.storage			gr.anonymous.class.storage.keystream.len	gr.anonymous.class.storage.len			gr.anonymous.class.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.class.fqn.s:
+gr.class.fqn.s.storage			gr.class.fqn.s.storage.keystream.len	gr.class.fqn.s.storage.len		gr.class.fqn.s.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.class.super:
+gr.class.super.storage			gr.class.super.storage.keystream.len	gr.class.super.storage.len		gr.class.super.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.field.name:
+gr.field.name.storage			gr.field.name.storage.keystream.len	gr.field.name.storage.len		gr.field.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.method.name:
+gr.method.name.storage			gr.method.name.storage.keystream.len	gr.method.name.storage.len		gr.method.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.script.class:
+gr.script.class.storage			gr.script.class.storage.keystream.len	gr.script.class.storage.len		gr.script.class.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/gr.script.fqn.s:
+gr.script.fqn.s.storage			gr.script.fqn.s.storage.keystream.len	gr.script.fqn.s.storage.len		gr.script.fqn.s.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.annotations:
+java.annotations.storage		java.annotations.storage.keystream.len	java.annotations.storage.len		java.annotations.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.anonymous.baseref:
+java.anonymous.baseref.storage			java.anonymous.baseref.storage.keystream.len	java.anonymous.baseref.storage.len		java.anonymous.baseref.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.class.extlist:
+java.class.extlist.storage			java.class.extlist.storage.keystream.len	java.class.extlist.storage.len			java.class.extlist.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.class.fqn:
+java.class.fqn.storage		java.class.fqn.storage.len	java.class.fqn.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.class.shortname:
+java.class.shortname.project.len		java.class.shortname.storage			java.class.shortname.storage.keystream.len	java.class.shortname.storage.len		java.class.shortname.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.field.name:
+java.field.name.storage			java.field.name.storage.keystream.len	java.field.name.storage.len		java.field.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.method.name:
+java.method.name.storage		java.method.name.storage.keystream.len	java.method.name.storage.len		java.method.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.method.parameter.types:
+java.method.parameter.types.storage			java.method.parameter.types.storage.keystream.len	java.method.parameter.types.storage.len			java.method.parameter.types.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.module.name:
+java.module.name.project.len		java.module.name.storage		java.module.name.storage.keystream.len	java.module.name.storage.len		java.module.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/java.unnamed.class:
+java.unnamed.class.storage			java.unnamed.class.storage.keystream.len	java.unnamed.class.storage.len			java.unnamed.class.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/jvm.static.member.name:
+jvm.static.member.name.storage			jvm.static.member.name.storage.keystream.len	jvm.static.member.name.storage.len		jvm.static.member.name.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/jvm.static.member.type:
+jvm.static.member.type.storage			jvm.static.member.type.storage.keystream.len	jvm.static.member.type.storage.len		jvm.static.member.type.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlin.primeindexkey:
+kotlin.primeIndexKey.storage			kotlin.primeIndexKey.storage.keystream.len	kotlin.primeIndexKey.storage.len		kotlin.primeIndexKey.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinextensionsinobjectsbyreceivertypeindex:
+KotlinExtensionsInObjectsByReceiverTypeIndex.storage			KotlinExtensionsInObjectsByReceiverTypeIndex.storage.len
+KotlinExtensionsInObjectsByReceiverTypeIndex.storage.keystream.len	KotlinExtensionsInObjectsByReceiverTypeIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinfilefacadeclassbypackageindex:
+KotlinFileFacadeClassByPackageIndex.storage			KotlinFileFacadeClassByPackageIndex.storage.len
+KotlinFileFacadeClassByPackageIndex.storage.keystream.len	KotlinFileFacadeClassByPackageIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinoverridableinternalmembersshortnameindex:
+KotlinOverridableInternalMembersShortNameIndex.storage			KotlinOverridableInternalMembersShortNameIndex.storage.len
+KotlinOverridableInternalMembersShortNameIndex.storage.keystream.len	KotlinOverridableInternalMembersShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinprobablycontractedfunctionshortnameindex:
+KotlinProbablyContractedFunctionShortNameIndex.storage			KotlinProbablyContractedFunctionShortNameIndex.storage.len
+KotlinProbablyContractedFunctionShortNameIndex.storage.keystream.len	KotlinProbablyContractedFunctionShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinprobablynothingfunctionshortnameindex:
+KotlinProbablyNothingFunctionShortNameIndex.storage			KotlinProbablyNothingFunctionShortNameIndex.storage.len
+KotlinProbablyNothingFunctionShortNameIndex.storage.keystream.len	KotlinProbablyNothingFunctionShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlinprobablynothingpropertyshortnameindex:
+KotlinProbablyNothingPropertyShortNameIndex.storage			KotlinProbablyNothingPropertyShortNameIndex.storage.len
+KotlinProbablyNothingPropertyShortNameIndex.storage.keystream.len	KotlinProbablyNothingPropertyShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlintoplevelextensionsbyreceivertypeindex:
+KotlinTopLevelExtensionsByReceiverTypeIndex.storage			KotlinTopLevelExtensionsByReceiverTypeIndex.storage.len
+KotlinTopLevelExtensionsByReceiverTypeIndex.storage.keystream.len	KotlinTopLevelExtensionsByReceiverTypeIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlintoplevelfunctionbypackageindex:
+KotlinTopLevelFunctionByPackageIndex.storage			KotlinTopLevelFunctionByPackageIndex.storage.len
+KotlinTopLevelFunctionByPackageIndex.storage.keystream.len	KotlinTopLevelFunctionByPackageIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlintoplevelpropertybypackageindex:
+KotlinTopLevelPropertyByPackageIndex.storage			KotlinTopLevelPropertyByPackageIndex.storage.len
+KotlinTopLevelPropertyByPackageIndex.storage.keystream.len	KotlinTopLevelPropertyByPackageIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlintopleveltypealiasbypackageindex:
+KotlinTopLevelTypeAliasByPackageIndex.storage			KotlinTopLevelTypeAliasByPackageIndex.storage.len
+KotlinTopLevelTypeAliasByPackageIndex.storage.keystream.len	KotlinTopLevelTypeAliasByPackageIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/kotlintypealiasbyexpansionshortnameindex:
+KotlinTypeAliasByExpansionShortNameIndex.storage		KotlinTypeAliasByExpansionShortNameIndex.storage.len
+KotlinTypeAliasByExpansionShortNameIndex.storage.keystream.len	KotlinTypeAliasByExpansionShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/markdown.header:
+markdown.header.storage			markdown.header.storage.keystream.len	markdown.header.storage.len		markdown.header.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/markdown.header.anchor:
+markdown.header.anchor.storage			markdown.header.anchor.storage.keystream.len	markdown.header.anchor.storage.len		markdown.header.anchor.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinannotationsindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinclassshortnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinClassShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinexactpackagesindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinExactPackagesIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadefqnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeFqNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinfilefacadeshortnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinFileFacadeShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinfilepartclassindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinFilePartClassIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinfullclassnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinFullClassNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinfunctionshortnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinFunctionShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlininnertypealiasclassidindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinInnerTypeAliasClassIdIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinjvmnameannotationindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinJvmNameAnnotationIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinmultifileclasspartindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinMultifileClassPartIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinpropertyshortnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinPropertyShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinscriptfqnindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinScriptFqnIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinsubclassobjectnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinSubclassObjectNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlinsuperclassindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinSuperClassIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlintoplevelclassbypackageindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelClassByPackageIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlintoplevelfunctionfqnnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelFunctionFqnNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlintoplevelpropertyfqnnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelPropertyFqnNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlintopleveltypealiasfqnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex.storage			org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinTopLevelTypeAliasFqNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/org.jetbrains.kotlin.idea.stubindex.kotlintypealiasshortnameindex:
+org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex.storage		org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex.storage.len
+org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex.storage.keystream.len	org.jetbrains.kotlin.idea.stubindex.KotlinTypeAliasShortNameIndex.storage_i.len
+
+./build/idea-sandbox/system/index/stubs/properties.index:
+properties.index.storage		properties.index.storage.keystream.len	properties.index.storage.len		properties.index.storage_i.len
+
+./build/idea-sandbox/system/index/todoindex:
+TodoIndex.storage	TodoIndex.storage.len	TodoIndex.storage_i.len	TodoIndex.ver
+
+./build/idea-sandbox/system/index/trigram.index:
+Trigram.Index.storage		Trigram.Index.storage.len	Trigram.Index.storage_i.len	Trigram.Index.ver		Trigram.Index_inputs		Trigram.Index_inputs.len	Trigram.Index_inputs_i.len
+
+./build/idea-sandbox/system/index/xmlnamespaces:
+XmlNamespaces.storage			XmlNamespaces.storage.len		XmlNamespaces.ver			XmlNamespaces_inputs.len
+XmlNamespaces.storage.keystream.len	XmlNamespaces.storage_i.len		XmlNamespaces_inputs			XmlNamespaces_inputs_i.len
+
+./build/idea-sandbox/system/index/xmlproperties:
+xmlProperties.storage			xmlProperties.storage.len		xmlProperties.ver			xmlProperties_inputs.len
+xmlProperties.storage.keystream.len	xmlProperties.storage_i.len		xmlProperties_inputs			xmlProperties_inputs_i.len
+
+./build/idea-sandbox/system/index/xmltagnames:
+XmlTagNames.storage			XmlTagNames.storage.len			XmlTagNames.ver				XmlTagNames_inputs.len
+XmlTagNames.storage.keystream.len	XmlTagNames.storage_i.len		XmlTagNames_inputs			XmlTagNames_inputs_i.len
+
+./build/idea-sandbox/system/index/yaml.keys.name:
+yaml.keys.name.storage			yaml.keys.name.storage.len		yaml.keys.name.ver			yaml.keys.name_inputs.len
+yaml.keys.name.storage.keystream.len	yaml.keys.name.storage_i.len		yaml.keys.name_inputs			yaml.keys.name_inputs_i.len
+
+./build/idea-sandbox/system/log:
+idea.log					indexing-diagnostic				open-telemetry-metrics-plotter.html		open-telemetry-metrics.2025-03-08-19-44-42.csv
+
+./build/idea-sandbox/system/log/indexing-diagnostic:
+storage-diagnostic-on-shutdown-2025-03-08-19-44-42.493.json
+
+./build/idea-sandbox/system/plugins:
+brokenPlugins.json	brokenPlugins.json.etag	pluginsXMLIds.json	pluginsXMLIds.json.etag
+
+./build/idea-sandbox/system/splash:
+slg8io-18ffbyc-hra0hs.ij
+
+./build/idea-sandbox/system/tmp:
+
+./build/instrumented:
+instrumentCode
+
+./build/instrumented/instrumentCode:
+
+./build/libs:
+instrumented-playground-ij-plugin-1.0-SNAPSHOT.jar	playground-ij-plugin-1.0-SNAPSHOT.jar
+
+./build/patchedPluginXmlFiles:
+plugin.xml
+
+./build/reports:
+configuration-cache
+
+./build/reports/configuration-cache:
+d5u6kad2lrg6rbvsx9b23zy5r	d74trejbbaf2qn016zg3gw9sk
+
+./build/reports/configuration-cache/d5u6kad2lrg6rbvsx9b23zy5r:
+38v5gbmjjepnbcdsxppu0cl1a
+
+./build/reports/configuration-cache/d5u6kad2lrg6rbvsx9b23zy5r/38v5gbmjjepnbcdsxppu0cl1a:
+configuration-cache-report.html
+
+./build/reports/configuration-cache/d74trejbbaf2qn016zg3gw9sk:
+aituy3v8qwmtmbaz8wzu60ot8
+
+./build/reports/configuration-cache/d74trejbbaf2qn016zg3gw9sk/aituy3v8qwmtmbaz8wzu60ot8:
+configuration-cache-report.html
+
+./build/resources:
+main
+
+./build/resources/main:
+META-INF
+
+./build/resources/main/META-INF:
+plugin.xml	pluginIcon.svg
+
+./build/tmp:
+downloadAndroidStudioProductReleasesXml	initializeIntelliJPlugin		instrumentedJar				runPluginVerifier
+downloadIdeaProductReleasesXml		instrumentCode				jar
+
+./build/tmp/downloadAndroidStudioProductReleasesXml:
+
+./build/tmp/downloadIdeaProductReleasesXml:
+
+./build/tmp/initializeIntelliJPlugin:
+2025-03-08			coroutines-javaagent.jar
+
+./build/tmp/instrumentCode:
+
+./build/tmp/instrumentedJar:
+MANIFEST.MF
+
+./build/tmp/jar:
+MANIFEST.MF
+
+./build/tmp/runPluginVerifier:
+
+./gradle:
+wrapper
+
+./gradle/wrapper:
+gradle-wrapper.jar		gradle-wrapper.properties
+
+./src:
+main
+
+./src/main:
+kotlin		resources
+
+./src/main/kotlin:
+org
+
+./src/main/kotlin/org:
+jetbrains
+
+./src/main/kotlin/org/jetbrains:
+kotlin
+
+./src/main/kotlin/org/jetbrains/kotlin:
+playgroundijplugin
+
+./src/main/kotlin/org/jetbrains/kotlin/playgroundijplugin:
+
+./src/main/resources:
+META-INF
+
+./src/main/resources/META-INF:
+plugin.xml	pluginIcon.svg
