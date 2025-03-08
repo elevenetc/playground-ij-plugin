@@ -12,3 +12,4 @@ fun isGradleProject(project: Project): Boolean {
 
     return hasBuildGradle || hasSettingsGradle
 }
+

@@ -21,6 +21,11 @@ import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.testFramework.LightProjectDescriptor
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
+import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
+import com.intellij.openapi.module.Module
+import com.intellij.openapi.module.ModuleManager
+import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
+import com.intellij.openapi.externalSystem.model.ProjectSystemId
 import org.junit.Test
 import java.io.File
 
@@ -99,5 +104,21 @@ class ProjectTest : BasePlatformTestCase() {
             ?: error("Failed to find virtual file for: ${buildGradleFile.path}")
 
         assertTrue("Project should be recognized as Gradle project", isGradleProject(myFixture.project))
+    }
+
+    @Test
+    fun testIsGradleModule() {
+        // Get the default module from the test project
+        val module = ModuleManager.getInstance(myFixture.project).modules.firstOrNull()
+            ?: error("No module found in test project")
+
+        // Verify that our isGradleModule function correctly uses ExternalSystemApiUtil
+        val projectSystemId = ProjectSystemId("GRADLE")
+        val expected = ExternalSystemApiUtil.isExternalSystemAwareModule(projectSystemId, module)
+        assertEquals(
+            "isGradleModule should return the same result as ExternalSystemApiUtil.isExternalSystemAwareModule",
+            expected,
+            isGradleModule(module)
+        )
     }
 }
