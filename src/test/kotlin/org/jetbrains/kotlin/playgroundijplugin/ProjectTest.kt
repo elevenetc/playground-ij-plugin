@@ -22,7 +22,8 @@ import com.intellij.testFramework.LightProjectDescriptor
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
 import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
-import com.intellij.openapi.module.Module
+import org.jetbrains.kotlin.playgroundijplugin.branchNotes.loadNote
+import org.jetbrains.kotlin.playgroundijplugin.branchNotes.storeNote
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
 import com.intellij.openapi.externalSystem.model.ProjectSystemId
@@ -120,5 +121,38 @@ class ProjectTest : BasePlatformTestCase() {
             expected,
             isGradleModule(module)
         )
+    }
+
+    /**
+     * Tests the branch notes functionality.
+     * Verifies that notes can be stored and retrieved correctly for different branches.
+     */
+    @Test
+    fun testBranchNotes() {
+        val project: Project = myFixture.project
+
+        // Test data
+        val branch1 = "test-branch-1"
+        val branch2 = "test-branch-2"
+        val note1 = "This is a test note for branch 1"
+        val note2 = "This is a test note for branch 2"
+
+        // Store notes for different branches
+        storeNote(branch1, note1, project)
+        storeNote(branch2, note2, project)
+
+        // Load notes and verify they match what was stored
+        val loadedNote1 = loadNote(branch1, project)
+        val loadedNote2 = loadNote(branch2, project)
+
+        // Verify notes were loaded correctly
+        assertEquals("Note for branch 1 should match what was stored", note1, loadedNote1)
+        assertEquals("Note for branch 2 should match what was stored", note2, loadedNote2)
+
+        // Verify that notes are unique per branch
+        assertFalse("Notes for different branches should be different", loadedNote1 == loadedNote2)
+
+        println("[DEBUG_LOG] Branch 1 note: $loadedNote1")
+        println("[DEBUG_LOG] Branch 2 note: $loadedNote2")
     }
 }
