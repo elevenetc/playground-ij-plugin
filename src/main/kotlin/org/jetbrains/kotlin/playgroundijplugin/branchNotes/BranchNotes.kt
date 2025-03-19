@@ -5,13 +5,14 @@ import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBPanel
-import com.intellij.ui.components.JBTextField
+import com.intellij.ui.components.JBScrollPane
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
 import java.awt.FlowLayout
-import java.awt.event.FocusAdapter
-import java.awt.event.FocusEvent
-import javax.swing.*
+import javax.swing.JButton
+import javax.swing.JComponent
+import javax.swing.JLabel
+import javax.swing.JPanel
 
 class BranchNotes : ToolWindowFactory {
     private var currentProject: Project? = null
@@ -39,66 +40,20 @@ class BranchNotes : ToolWindowFactory {
         } else {
             val panel = JBPanel<JBPanel<*>>(BorderLayout())
 
-            val noteField = JBTextField("Add note...")
-            val branches = loadBranches(project).toTypedArray()
-            val branchesBox = ComboBox(DefaultComboBoxModel(branches))
-            //val branchesBox = ComboBox<String>(0)
-
-            // Variable to keep track of the current branch
-            var currentBranch = if (branches.isNotEmpty()) branches[0] else ""
-
-            // Load note for the initially selected branch
-            if (currentBranch.isNotEmpty()) {
-                noteField.text = loadNote(currentBranch, project)
-            }
-
-            // Save note when branch is changed
-            branchesBox.addActionListener {
-                // Save note for the previous branch
-                if (currentBranch.isNotEmpty()) {
-                    storeNote(currentBranch, noteField.text, project)
-                }
-
-                // Update current branch and load its note
-                currentBranch = branchesBox.selectedItem as String
-                noteField.text = loadNote(currentBranch, project)
-            }
-
-            // Save note when text field loses focus
-            noteField.addFocusListener(object : FocusAdapter() {
-                override fun focusLost(e: FocusEvent?) {
-                    if (currentBranch.isNotEmpty()) {
-                        storeNote(currentBranch, noteField.text, project)
-                    }
-                }
-            })
-
+            val noteArea = NoteArea(project)
+            val branchesBox = ComboBox<String>()
             val refreshButton = JButton("Refresh")
-            refreshButton.addActionListener {
-                // Save current note before refreshing
-                if (currentBranch.isNotEmpty()) {
-                    storeNote(currentBranch, noteField.text, project)
-                }
+            val noteAreaController = NoteAreaController(
+                noteArea,
+                branchesBox,
+                NoteStorage(project),
+                refreshButton,
+                project
+            )
 
-                val updatedBranches = loadBranches(project).toTypedArray()
-                branchesBox.model = DefaultComboBoxModel(updatedBranches)
-
-                // Update current branch
-                currentBranch = if (updatedBranches.isNotEmpty()) updatedBranches[0] else ""
-                if (currentBranch.isNotEmpty()) {
-                    noteField.text = loadNote(currentBranch, project)
-                }
-            }
-
-            val saveButton = JButton("Save")
-            saveButton.addActionListener {
-                if (currentBranch.isNotEmpty()) {
-                    storeNote(currentBranch, noteField.text, project)
-                }
-            }
+            noteAreaController.onCreate()
 
             val buttonsPanel = JPanel(FlowLayout(FlowLayout.RIGHT))
-            buttonsPanel.add(saveButton)
             buttonsPanel.add(refreshButton)
 
             val topPanel = JPanel(BorderLayout())
@@ -106,8 +61,7 @@ class BranchNotes : ToolWindowFactory {
             topPanel.add(buttonsPanel, BorderLayout.EAST)
 
             panel.add(topPanel, BorderLayout.NORTH)
-            panel.add(noteField, BorderLayout.CENTER)
-
+            panel.add(JBScrollPane(noteArea), BorderLayout.CENTER)
             return panel
         }
     }
