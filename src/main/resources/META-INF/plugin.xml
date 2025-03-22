@@ -22,11 +22,15 @@
        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.gradle</depends>
+  <depends>Git4Idea</depends>
 
   <!-- Extension points defined by the plugin.
        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
     <toolWindow id="Branch notes" secondary="true" icon="AllIcons.General.Modified" anchor="right"
                 factoryClass="org.jetbrains.kotlin.playgroundijplugin.branchNotes.BranchNotes"/>
+
+    <postStartupActivity implementation="org.jetbrains.kotlin.playgroundijplugin.branchNotes.BranchNotesStartupActivity"/>
   </extensions>
+
 </idea-plugin>
