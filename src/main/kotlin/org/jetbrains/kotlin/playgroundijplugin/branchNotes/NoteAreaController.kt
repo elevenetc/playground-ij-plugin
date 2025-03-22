@@ -12,14 +12,15 @@ class NoteAreaController(
     private val changeBranchBox: ComboBox<String>,
     private val noteStorage: NoteStorage,
     private val refreshBranches: JButton,
-    private val project: Project
+    project: Project
 ) {
     private var branches = DefaultComboBoxModel<String>()
+    private val branchesService = project.getService(CurrentBranchService::class.java)
 
     fun onCreate() {
 
-        loadAndSetBranches()
-        loadAndSetSelectedBranchNode()
+        //loadAndSetBranches()
+        //loadAndSetSelectedBranchNode()
 
         changeBranchBox.addActionListener {
             unsubscribeFromChanges()
@@ -27,15 +28,16 @@ class NoteAreaController(
             subscribeToChanges()
         }
 
-        project.getService(CurrentBranchService::class.java).addListener { branch ->
+        refreshBranches.addActionListener {
             unsubscribeFromChanges()
-            branches.selectedItem = branch
+            setBranches()
             subscribeToChanges()
         }
 
-        refreshBranches.addActionListener {
+        branchesService.onCurrentBranchChangeListener { branch ->
             unsubscribeFromChanges()
-            loadAndSetBranches()
+            setBranches()
+            //branches.selectedItem = branch
             subscribeToChanges()
         }
     }
@@ -51,12 +53,14 @@ class NoteAreaController(
         listener = null
     }
 
-    private fun loadAndSetBranches() {
-        val loadedBranches = loadBranches(project)
+    private fun setBranches() {
+        val loadedBranches = branchesService.getBranches().map { it.name }
+        val currentBranch = branchesService.getCurrentBranch() ?: loadedBranches.firstOrNull()
+
         branches.removeAllElements()
         branches.addAll(loadedBranches)
-        if (branches.selectedItem == null) branches.selectedItem = loadedBranches.first()
-        if (changeBranchBox.model.size == 0) changeBranchBox.model = branches
+        branches.selectedItem = currentBranch
+        changeBranchBox.model = branches
     }
 
     private fun loadAndSetSelectedBranchNode() {

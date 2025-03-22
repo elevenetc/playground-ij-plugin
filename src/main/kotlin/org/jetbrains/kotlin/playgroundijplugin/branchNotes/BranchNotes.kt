@@ -6,6 +6,7 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.components.JBScrollPane
+import com.intellij.ui.components.JBTabbedPane
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
 import java.awt.FlowLayout
@@ -38,7 +39,17 @@ class BranchNotes : ToolWindowFactory {
             panel.add(label, BorderLayout.CENTER)
             return panel
         } else {
-            val panel = JBPanel<JBPanel<*>>(BorderLayout())
+            // Create a tabbed pane
+            val tabbedPane = JBTabbedPane()
+
+            // First tab - empty text area
+            val emptyNoteArea = NoteArea(project)
+            val projectNotes = JBPanel<JBPanel<*>>(BorderLayout())
+            projectNotes.add(JBScrollPane(emptyNoteArea), BorderLayout.CENTER)
+            tabbedPane.addTab("Project notes", projectNotes)
+
+            // Second tab - current implementation with combobox and text area
+            val branchNotes = JBPanel<JBPanel<*>>(BorderLayout())
 
             val noteArea = NoteArea(project)
             val branchesBox = ComboBox<String>()
@@ -60,9 +71,12 @@ class BranchNotes : ToolWindowFactory {
             topPanel.add(branchesBox, BorderLayout.CENTER)
             topPanel.add(buttonsPanel, BorderLayout.EAST)
 
-            panel.add(topPanel, BorderLayout.NORTH)
-            panel.add(JBScrollPane(noteArea), BorderLayout.CENTER)
-            return panel
+            branchNotes.add(topPanel, BorderLayout.NORTH)
+            branchNotes.add(JBScrollPane(noteArea), BorderLayout.CENTER)
+
+            tabbedPane.addTab("Branch Notes", branchNotes)
+
+            return tabbedPane
         }
     }
 }

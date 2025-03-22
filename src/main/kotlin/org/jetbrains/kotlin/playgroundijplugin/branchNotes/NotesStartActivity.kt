@@ -12,9 +12,17 @@ class BranchNotesStartupActivity : ProjectActivity {
         connection.subscribe(
             GitRepository.GIT_REPO_CHANGE,
             GitRepositoryChangeListener { repository ->
-                val branch = repository.currentBranchName ?: return@GitRepositoryChangeListener
+                val currentBranch = repository.currentBranchName ?: return@GitRepositoryChangeListener
+
+                val branches = repository.branches.localBranches.map {
+                    val updateTime = getBranchUpdateTime(project, repository.root, it.name)
+                    BranchData(it.name, updateTime ?: -1)
+                }.sortedBy { it.updateTime }
+
                 val branchService = project.getService(CurrentBranchService::class.java)
-                branchService.setCurrentBranch(branch)
+
+                branchService.setBranches(branches)
+                branchService.setCurrentBranch(currentBranch)
             }
         )
     }
