@@ -18,13 +18,16 @@ private fun createNoteKey(project: Project, branchName: String): String {
  */
 fun loadNote(branchName: String, project: Project): String {
     val key = createNoteKey(project, branchName)
-    return PropertiesComponent.getInstance(project).getValue(key, "")
+    val result = PropertiesComponent.getInstance(project).getValue(key, "")
+    println("Loaded note($branchName): ${result.lines().firstOrNull()}")
+    return result
 }
 
 /**
  * Stores a note for the specified branch in local storage
  */
 fun storeNote(branchName: String, note: String, project: Project) {
+    println("Storing note($branchName): ${note.lines().firstOrNull()}")
     val key = createNoteKey(project, branchName)
     PropertiesComponent.getInstance(project).setValue(key, note)
 }

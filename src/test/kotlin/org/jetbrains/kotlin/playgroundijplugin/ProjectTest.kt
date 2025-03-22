@@ -16,18 +16,17 @@ package org.jetbrains.kotlin.playgroundijplugin
  * 3. Use myFixture.project to access the test project instance
  */
 
+import com.intellij.openapi.externalSystem.model.ProjectSystemId
+import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
+import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.testFramework.LightProjectDescriptor
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
-import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
-import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
 import org.jetbrains.kotlin.playgroundijplugin.branchNotes.loadNote
 import org.jetbrains.kotlin.playgroundijplugin.branchNotes.storeNote
-import com.intellij.openapi.module.ModuleManager
-import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
-import com.intellij.openapi.externalSystem.model.ProjectSystemId
-import org.junit.Test
+import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
+import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
 import java.io.File
 
 class ProjectTest : BasePlatformTestCase() {
@@ -48,7 +47,6 @@ class ProjectTest : BasePlatformTestCase() {
      * - Verify project is properly initialized
      * - Check basic project properties
      */
-    @Test
     fun testBasicProjectOperations() {
         // Get the test project instance
         val project: Project = myFixture.project
@@ -75,7 +73,6 @@ class ProjectTest : BasePlatformTestCase() {
      * - Verify project services are available
      * - Check project initialization state
      */
-    @Test
     fun testProjectComponents() {
         val project: Project = myFixture.project
 
@@ -87,7 +84,6 @@ class ProjectTest : BasePlatformTestCase() {
         assertTrue("Project settings should be available", project.isInitialized)
     }
 
-    @Test
     fun testIsGradleProject() {
         // Get resource file
         val resourcePath = "/gradle-project/build.gradle"
@@ -101,13 +97,12 @@ class ProjectTest : BasePlatformTestCase() {
         buildGradleFile.writeText(File(resourceUrl.toURI()).readText())
 
         // Refresh VFS to make sure IntelliJ sees the new file
-        val virtualFile = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(buildGradleFile)
+        LocalFileSystem.getInstance().refreshAndFindFileByIoFile(buildGradleFile)
             ?: error("Failed to find virtual file for: ${buildGradleFile.path}")
 
         assertTrue("Project should be recognized as Gradle project", isGradleProject(myFixture.project))
     }
 
-    @Test
     fun testIsGradleModule() {
         // Get the default module from the test project
         val module = ModuleManager.getInstance(myFixture.project).modules.firstOrNull()
@@ -127,32 +122,21 @@ class ProjectTest : BasePlatformTestCase() {
      * Tests the branch notes functionality.
      * Verifies that notes can be stored and retrieved correctly for different branches.
      */
-    @Test
     fun testBranchNotes() {
         val project: Project = myFixture.project
 
-        // Test data
         val branch1 = "test-branch-1"
         val branch2 = "test-branch-2"
         val note1 = "This is a test note for branch 1"
         val note2 = "This is a test note for branch 2"
 
-        // Store notes for different branches
+        assertEmpty(loadNote(branch1, project))
+        assertEmpty(loadNote(branch2, project))
+
         storeNote(branch1, note1, project)
         storeNote(branch2, note2, project)
 
-        // Load notes and verify they match what was stored
-        val loadedNote1 = loadNote(branch1, project)
-        val loadedNote2 = loadNote(branch2, project)
-
-        // Verify notes were loaded correctly
-        assertEquals("Note for branch 1 should match what was stored", note1, loadedNote1)
-        assertEquals("Note for branch 2 should match what was stored", note2, loadedNote2)
-
-        // Verify that notes are unique per branch
-        assertFalse("Notes for different branches should be different", loadedNote1 == loadedNote2)
-
-        println("[DEBUG_LOG] Branch 1 note: $loadedNote1")
-        println("[DEBUG_LOG] Branch 2 note: $loadedNote2")
+        assertEquals(note1, loadNote(branch1, project))
+        assertEquals(note2, loadNote(branch2, project))
     }
 }
