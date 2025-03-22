@@ -11,6 +11,7 @@ class NoteArea(
 
     init {
         autoscrolls = true
+        addContextMenu()
     }
 
     fun setNote(note: String) {
