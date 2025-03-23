@@ -1,11 +1,10 @@
 package org.jetbrains.kotlin.playgroundijplugin.branchNotes
 
-import com.intellij.ui.DocumentAdapter
-import javax.swing.event.DocumentEvent
+import com.intellij.openapi.editor.event.DocumentListener
 
-fun whenTextChanged(handler: () -> Unit): DocumentAdapter {
-    return object : DocumentAdapter() {
-        override fun textChanged(e: DocumentEvent) {
+fun whenTextChanged(handler: () -> Unit): DocumentListener {
+    return object : DocumentListener {
+        override fun documentChanged(event: com.intellij.openapi.editor.event.DocumentEvent) {
             handler.invoke()
         }
     }

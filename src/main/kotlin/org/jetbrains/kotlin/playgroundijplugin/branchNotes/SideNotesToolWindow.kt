@@ -15,7 +15,7 @@ import javax.swing.JComponent
 import javax.swing.JLabel
 import javax.swing.JPanel
 
-class SideNotes : ToolWindowFactory {
+class SideNotesToolWindow : ToolWindowFactory {
     private var currentProject: Project? = null
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
@@ -43,7 +43,7 @@ class SideNotes : ToolWindowFactory {
             val tabbedPane = JBTabbedPane()
 
             // First tab - empty text area
-            val projectNoteArea = NoteArea(project)
+            val projectNoteArea = NoteArea()
             val projectNotes = JBPanel<JBPanel<*>>(BorderLayout())
             projectNotes.add(JBScrollPane(projectNoteArea), BorderLayout.CENTER)
             tabbedPane.addTab("Project notes", projectNotes)
@@ -51,7 +51,7 @@ class SideNotes : ToolWindowFactory {
             // Second tab - current implementation with combobox and text area
             val branchNotes = JBPanel<JBPanel<*>>(BorderLayout())
 
-            val noteArea = NoteArea(project)
+            val noteArea = NoteArea()
             val branchesBox = ComboBox<String>()
             val settingsBtn = JButton("Settings")
             val noteStorage = NoteStorage(project)

@@ -8,8 +8,8 @@ class ProjectNoteController(
 
         noteArea.text = noteStorage.loadProjectNote().note
 
-        noteArea.document.addDocumentListener(whenTextChanged {
-            noteStorage.storeProjectNote(noteArea.text)
-        })
+//        noteArea.document.addDocumentListener(whenTextChanged {
+//            noteStorage.storeProjectNote(noteArea.text)
+//        })
     }
 }

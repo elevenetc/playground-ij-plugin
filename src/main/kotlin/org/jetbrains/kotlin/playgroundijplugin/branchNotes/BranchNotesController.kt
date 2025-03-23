@@ -1,8 +1,8 @@
 package org.jetbrains.kotlin.playgroundijplugin.branchNotes
 
+import com.intellij.openapi.editor.event.DocumentListener
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
-import com.intellij.ui.DocumentAdapter
 import javax.swing.DefaultComboBoxModel
 
 class BranchNotesController(
@@ -13,7 +13,7 @@ class BranchNotesController(
 ) {
     private var branches = DefaultComboBoxModel<String>()
     private val branchesService = project.getService(CurrentBranchService::class.java)
-    private var onNoteChangedListener: DocumentAdapter? = null
+    private var onNoteChangedListener: DocumentListener? = null
 
     fun onCreate() {
 
@@ -33,11 +33,11 @@ class BranchNotesController(
     private fun subscribeToChanges() {
         if (onNoteChangedListener != null) return
         onNoteChangedListener = whenTextChanged { storeSelectedBranchNote() }
-        noteArea.document.addDocumentListener(onNoteChangedListener)
+        onNoteChangedListener?.let { noteArea.document.addDocumentListener(it) }
     }
 
     private fun unsubscribeFromChanges() {
-        noteArea.document.removeDocumentListener(onNoteChangedListener)
+        onNoteChangedListener?.let { noteArea.document.removeDocumentListener(it) }
         onNoteChangedListener = null
     }
 
