@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.testFramework.LightProjectDescriptor
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
-import org.jetbrains.kotlin.playgroundijplugin.branchNotes.loadNote
+import org.jetbrains.kotlin.playgroundijplugin.branchNotes.loadBranchNote
 import org.jetbrains.kotlin.playgroundijplugin.branchNotes.storeNote
 import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
 import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
@@ -130,13 +130,13 @@ class ProjectTest : BasePlatformTestCase() {
         val note1 = "This is a test note for branch 1"
         val note2 = "This is a test note for branch 2"
 
-        assertEmpty(loadNote(branch1, project))
-        assertEmpty(loadNote(branch2, project))
+        assertEmpty(loadBranchNote(branch1, project))
+        assertEmpty(loadBranchNote(branch2, project))
 
         storeNote(branch1, note1, project)
         storeNote(branch2, note2, project)
 
-        assertEquals(note1, loadNote(branch1, project))
-        assertEquals(note2, loadNote(branch2, project))
+        assertEquals(note1, loadBranchNote(branch1, project))
+        assertEquals(note2, loadBranchNote(branch2, project))
     }
 }

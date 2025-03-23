@@ -4,82 +4,64 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.ui.DocumentAdapter
 import javax.swing.DefaultComboBoxModel
-import javax.swing.JButton
-import javax.swing.event.DocumentEvent
 
-class NoteAreaController(
+class BranchNotesController(
     private val noteArea: NoteArea,
     private val changeBranchBox: ComboBox<String>,
     private val noteStorage: NoteStorage,
-    private val refreshBranches: JButton,
     project: Project
 ) {
     private var branches = DefaultComboBoxModel<String>()
     private val branchesService = project.getService(CurrentBranchService::class.java)
+    private var onNoteChangedListener: DocumentAdapter? = null
 
     fun onCreate() {
 
-        //loadAndSetBranches()
-        //loadAndSetSelectedBranchNode()
-
         changeBranchBox.addActionListener {
             unsubscribeFromChanges()
-            loadAndSetSelectedBranchNode()
+            loadAndSetSelectedBranchNote()
             subscribeToChanges()
         }
 
-        refreshBranches.addActionListener {
+        branchesService.onCurrentBranchChangeListener { _ ->
             unsubscribeFromChanges()
-            setBranches()
-            subscribeToChanges()
-        }
-
-        branchesService.onCurrentBranchChangeListener { branch ->
-            unsubscribeFromChanges()
-            setBranches()
-            //branches.selectedItem = branch
+            onCurrentBranchChangeListener()
             subscribeToChanges()
         }
     }
 
     private fun subscribeToChanges() {
-        if (listener != null) return
-        listener = whenTextChanged { storeSelectedBranchNote() }
-        noteArea.document.addDocumentListener(listener)
+        if (onNoteChangedListener != null) return
+        onNoteChangedListener = whenTextChanged { storeSelectedBranchNote() }
+        noteArea.document.addDocumentListener(onNoteChangedListener)
     }
 
     private fun unsubscribeFromChanges() {
-        noteArea.document.removeDocumentListener(listener)
-        listener = null
+        noteArea.document.removeDocumentListener(onNoteChangedListener)
+        onNoteChangedListener = null
     }
 
-    private fun setBranches() {
+    private fun onCurrentBranchChangeListener() {
         val loadedBranches = branchesService.getBranches().map { it.name }
         val currentBranch = branchesService.getCurrentBranch() ?: loadedBranches.firstOrNull()
 
         branches.removeAllElements()
         branches.addAll(loadedBranches)
         branches.selectedItem = currentBranch
+
         changeBranchBox.model = branches
+
+        loadAndSetSelectedBranchNote()
     }
 
-    private fun loadAndSetSelectedBranchNode() {
+    private fun loadAndSetSelectedBranchNote() {
         val selectedBranch = branches.selectedItem as? String ?: return
-        noteArea.setNote(noteStorage.loadNote(selectedBranch))
+        noteArea.setNote(noteStorage.loadBranchNote(Branch(selectedBranch)).note)
     }
 
     private fun storeSelectedBranchNote() {
         val selectedBranch = branches.selectedItem as? String ?: return
-        noteStorage.storeNote(selectedBranch, noteArea.text)
-    }
-
-    var listener: DocumentAdapter? = null
-}
-
-private fun whenTextChanged(handler: () -> Unit): DocumentAdapter {
-    return object : DocumentAdapter() {
-        override fun textChanged(e: DocumentEvent) {
-            handler.invoke()
-        }
+        noteStorage.storeBranchNote(noteArea.text, Branch(selectedBranch))
     }
 }
+

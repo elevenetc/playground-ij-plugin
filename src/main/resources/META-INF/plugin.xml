@@ -27,8 +27,8 @@
   <!-- Extension points defined by the plugin.
        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Branch notes" secondary="true" icon="AllIcons.General.Modified" anchor="right"
-                factoryClass="org.jetbrains.kotlin.playgroundijplugin.branchNotes.BranchNotes"/>
+    <toolWindow id="Side notes" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                factoryClass="org.jetbrains.kotlin.playgroundijplugin.branchNotes.SideNotes"/>
 
     <postStartupActivity implementation="org.jetbrains.kotlin.playgroundijplugin.branchNotes.BranchNotesStartupActivity"/>
   </extensions>

@@ -15,7 +15,7 @@ import javax.swing.JComponent
 import javax.swing.JLabel
 import javax.swing.JPanel
 
-class BranchNotes : ToolWindowFactory {
+class SideNotes : ToolWindowFactory {
     private var currentProject: Project? = null
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
@@ -43,9 +43,9 @@ class BranchNotes : ToolWindowFactory {
             val tabbedPane = JBTabbedPane()
 
             // First tab - empty text area
-            val emptyNoteArea = NoteArea(project)
+            val projectNoteArea = NoteArea(project)
             val projectNotes = JBPanel<JBPanel<*>>(BorderLayout())
-            projectNotes.add(JBScrollPane(emptyNoteArea), BorderLayout.CENTER)
+            projectNotes.add(JBScrollPane(projectNoteArea), BorderLayout.CENTER)
             tabbedPane.addTab("Project notes", projectNotes)
 
             // Second tab - current implementation with combobox and text area
@@ -53,19 +53,21 @@ class BranchNotes : ToolWindowFactory {
 
             val noteArea = NoteArea(project)
             val branchesBox = ComboBox<String>()
-            val refreshButton = JButton("Refresh")
-            val noteAreaController = NoteAreaController(
+            val settingsBtn = JButton("Settings")
+            val noteStorage = NoteStorage(project)
+            val branchNotesController = BranchNotesController(
                 noteArea,
                 branchesBox,
-                NoteStorage(project),
-                refreshButton,
+                noteStorage,
                 project
             )
+            val projectNoteController = ProjectNoteController(projectNoteArea, noteStorage)
 
-            noteAreaController.onCreate()
+            projectNoteController.onCreate()
+            branchNotesController.onCreate()
 
             val buttonsPanel = JPanel(FlowLayout(FlowLayout.RIGHT))
-            buttonsPanel.add(refreshButton)
+            buttonsPanel.add(settingsBtn)
 
             val topPanel = JPanel(BorderLayout())
             topPanel.add(branchesBox, BorderLayout.CENTER)
@@ -74,7 +76,7 @@ class BranchNotes : ToolWindowFactory {
             branchNotes.add(topPanel, BorderLayout.NORTH)
             branchNotes.add(JBScrollPane(noteArea), BorderLayout.CENTER)
 
-            tabbedPane.addTab("Branch Notes", branchNotes)
+            tabbedPane.addTab("Branch notes", branchNotes)
 
             return tabbedPane
         }
