@@ -1,7 +1,5 @@
 package org.jetbrains.kotlin.playgroundijplugin.branchNotes
 
-import com.intellij.openapi.project.Project
-
 class ProjectNoteController(
     private val noteArea: NoteArea,
     private val noteStorage: NoteStorage,

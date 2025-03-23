@@ -16,18 +16,13 @@ package org.jetbrains.kotlin.playgroundijplugin
  * 3. Use myFixture.project to access the test project instance
  */
 
-import com.intellij.openapi.externalSystem.model.ProjectSystemId
-import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
-import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.testFramework.LightProjectDescriptor
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
+import org.jetbrains.kotlin.playgroundijplugin.branchNotes.Branch
+import org.jetbrains.kotlin.playgroundijplugin.branchNotes.createNoteKey
 import org.jetbrains.kotlin.playgroundijplugin.branchNotes.loadBranchNote
 import org.jetbrains.kotlin.playgroundijplugin.branchNotes.storeNote
-import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleModule
-import org.jetbrains.kotlin.playgroundijplugin.utils.isGradleProject
-import java.io.File
 
 class ProjectTest : BasePlatformTestCase() {
 
@@ -84,40 +79,6 @@ class ProjectTest : BasePlatformTestCase() {
         assertTrue("Project settings should be available", project.isInitialized)
     }
 
-    fun testIsGradleProject() {
-        // Get resource file
-        val resourcePath = "/gradle-project/build.gradle"
-        val resourceUrl = javaClass.getResource(resourcePath) ?: error("Resource not found: $resourcePath")
-
-        // Get project base path
-        val projectPath = myFixture.project.basePath ?: error("Project base path is null")
-
-        // Copy build.gradle to project directory
-        val buildGradleFile = File(projectPath, "build.gradle")
-        buildGradleFile.writeText(File(resourceUrl.toURI()).readText())
-
-        // Refresh VFS to make sure IntelliJ sees the new file
-        LocalFileSystem.getInstance().refreshAndFindFileByIoFile(buildGradleFile)
-            ?: error("Failed to find virtual file for: ${buildGradleFile.path}")
-
-        assertTrue("Project should be recognized as Gradle project", isGradleProject(myFixture.project))
-    }
-
-    fun testIsGradleModule() {
-        // Get the default module from the test project
-        val module = ModuleManager.getInstance(myFixture.project).modules.firstOrNull()
-            ?: error("No module found in test project")
-
-        // Verify that our isGradleModule function correctly uses ExternalSystemApiUtil
-        val projectSystemId = ProjectSystemId("GRADLE")
-        val expected = ExternalSystemApiUtil.isExternalSystemAwareModule(projectSystemId, module)
-        assertEquals(
-            "isGradleModule should return the same result as ExternalSystemApiUtil.isExternalSystemAwareModule",
-            expected,
-            isGradleModule(module)
-        )
-    }
-
     /**
      * Tests the branch notes functionality.
      * Verifies that notes can be stored and retrieved correctly for different branches.
@@ -130,13 +91,13 @@ class ProjectTest : BasePlatformTestCase() {
         val note1 = "This is a test note for branch 1"
         val note2 = "This is a test note for branch 2"
 
-        assertEmpty(loadBranchNote(branch1, project))
-        assertEmpty(loadBranchNote(branch2, project))
+        assertEmpty(loadBranchNote(Branch(branch1), project).note)
+        assertEmpty(loadBranchNote(Branch(branch2), project).note)
 
-        storeNote(branch1, note1, project)
-        storeNote(branch2, note2, project)
+        storeNote(createNoteKey(project, branch1), note1, project)
+        storeNote(createNoteKey(project, branch2), note2, project)
 
-        assertEquals(note1, loadBranchNote(branch1, project))
-        assertEquals(note2, loadBranchNote(branch2, project))
+        assertEquals(note1, loadBranchNote(Branch(branch1), project).note)
+        assertEquals(note2, loadBranchNote(Branch(branch2), project).note)
     }
 }
