@@ -43,7 +43,7 @@ class SideNotesToolWindow : ToolWindowFactory {
             val tabbedPane = JBTabbedPane()
 
             // First tab - empty text area
-            val projectNoteArea = NoteArea()
+            val projectNoteArea = NoteArea(project)
             val projectNotes = JBPanel<JBPanel<*>>(BorderLayout())
             projectNotes.add(JBScrollPane(projectNoteArea), BorderLayout.CENTER)
             tabbedPane.addTab("Project notes", projectNotes)
@@ -51,7 +51,7 @@ class SideNotesToolWindow : ToolWindowFactory {
             // Second tab - current implementation with combobox and text area
             val branchNotes = JBPanel<JBPanel<*>>(BorderLayout())
 
-            val noteArea = NoteArea()
+            val noteArea = NoteArea(project)
             val branchesBox = ComboBox<String>()
             val settingsBtn = JButton("Settings")
             val noteStorage = NoteStorage(project)
