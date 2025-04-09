@@ -24,7 +24,8 @@ intellij {
 
   plugins.set(listOf(
     "com.intellij.gradle",
-    "Git4Idea"
+    "Git4Idea",
+    "org.jetbrains.kotlin"
   ))
 }
 
