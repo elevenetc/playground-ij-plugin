@@ -6,11 +6,33 @@ import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.psi.PsiDocumentManager
+import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiManager
 import com.intellij.psi.search.FilenameIndex
 import com.intellij.psi.search.GlobalSearchScope
+import com.intellij.psi.util.PsiTreeUtil
+import org.jetbrains.kotlin.nj2k.types.typeFqName
+import org.jetbrains.kotlin.psi.KtNamedFunction
 
 class GenerateTopLevelFunctionsCallsAction : AnAction("Generate Top Level Function") {
+
+    /**
+     * Checks if a PSI element represents a top-level function.
+     * A top-level function is one that is not inside a class, object, or interface.
+     */
+    private fun isTopLevelFunction(element: PsiElement): Boolean {
+        // Get the parent elements
+        var parent = element.parent
+        while (parent != null) {
+            val text = parent.text
+            // Check if the parent is a class, object, or interface
+            if (text.contains("class ") || text.contains("object ") || text.contains("interface ")) {
+                return false
+            }
+            parent = parent.parent
+        }
+        return true
+    }
 
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
@@ -40,75 +62,29 @@ class GenerateTopLevelFunctionsCallsAction : AnAction("Generate Top Level Functi
             val psiManager = PsiManager.getInstance(project)
             val kotlinPsiFile = psiManager.findFile(kotlinFile) ?: continue
 
-            // Get the text of the file
-            val fileText = kotlinPsiFile.text
+            // Find all function declarations in the file using PSI
+            val functions = PsiTreeUtil.findChildrenOfType(kotlinPsiFile, PsiElement::class.java)
+                .filterIsInstance<KtNamedFunction>()
 
-            // Find all top-level functions in the file
-            // Match pattern: fun name<generics>(params): returnType
-            // We need to ensure we're only matching top-level functions, not methods inside classes
-            val fileLines = fileText.lines()
-            val topLevelFunctionLines = mutableListOf<String>()
+            for (function in functions) {
 
-            // Simple approach: collect lines that start with "fun" and are not inside a class/object/interface block
-            var insideClassOrObject = false
-            var braceCount = 0
-
-            for (line in fileLines) {
-                val trimmedLine = line.trim()
-
-                // Check if we're entering a class, object, or interface declaration
-                if (trimmedLine.startsWith("class ") || trimmedLine.startsWith("object ") || trimmedLine.startsWith("interface ")) {
-                    insideClassOrObject = true
-                }
-
-                // Count opening braces
-                braceCount += line.count { it == '{' }
-
-                // Count closing braces
-                braceCount -= line.count { it == '}' }
-
-                // If braceCount is 0, we're at the top level
-                if (braceCount == 0) {
-                    insideClassOrObject = false
-                }
-
-                // If we're not inside a class/object and the line starts with "fun", it's a top-level function
-                if (!insideClassOrObject && trimmedLine.startsWith("fun ")) {
-                    topLevelFunctionLines.add(line)
-                }
-            }
-
-            // Now parse the top-level function lines
-            val functionRegex = Regex("fun\\s+([a-zA-Z0-9_]+)\\s*(<[^>]*>)?\\s*\\(([^)]*)\\)\\s*(:)?\\s*([^{]*)?")
-            val matches = topLevelFunctionLines.flatMap { functionRegex.findAll(it) }
-
-            for (match in matches) {
-                val functionName = match.groupValues[1]
-                val generics = match.groupValues[2]
-                val parameters = match.groupValues[3]
+                // Extract function name and parameters using PSI
+                val functionName = function.name ?: ""
 
                 // Skip the function we're generating to avoid recursion
                 if (functionName == "topLevelFunctionsCalls") continue
 
-                // Skip functions with generics
-                if (generics.isNotEmpty()) continue
+                // Check for generics
+                val hasGenerics = function.typeParameters.isNotEmpty()
+                if (hasGenerics) continue
 
-                // Parse parameters
-                val paramList = parameters.split(",").map { it.trim() }
                 var hasNonPrimitiveArgs = false
                 val args = mutableListOf<String>()
+                val paramList = function.valueParameters
 
                 for (param in paramList) {
-                    if (param.isEmpty()) continue
 
-                    // Extract parameter type
-                    val paramParts = param.split(":")
-                    if (paramParts.size < 2) {
-                        hasNonPrimitiveArgs = true
-                        break
-                    }
-
-                    val paramType = paramParts[1].trim()
+                    val paramType = param.typeFqName()?.shortName()?.asString() ?: ""
 
                     // Check if parameter type is primitive
                     when {
