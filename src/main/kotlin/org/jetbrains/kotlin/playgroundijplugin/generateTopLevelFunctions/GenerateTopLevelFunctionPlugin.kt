@@ -28,9 +28,9 @@ class GenerateTopLevelFunctionsCallsAction : AnAction("Generate Top Level Functi
         // Find the current module
         val module = ModuleUtil.findModuleForFile(psiFile.virtualFile, project) ?: return
 
-        // Find all Kotlin files in the current module
-        val moduleScope = GlobalSearchScope.moduleScope(module)
-        val kotlinFiles = FilenameIndex.getAllFilesByExt(project, "kt", moduleScope)
+        // Find all Kotlin files in the current module and its dependencies
+        val globalScope = GlobalSearchScope.moduleWithDependenciesScope(module)
+        val kotlinFiles = FilenameIndex.getAllFilesByExt(project, "kt", globalScope)
 
         // Generate function calls
         val functionCalls = StringBuilder()
