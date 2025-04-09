@@ -33,4 +33,13 @@
     <postStartupActivity implementation="org.jetbrains.kotlin.playgroundijplugin.branchNotes.BranchNotesStartupActivity"/>
   </extensions>
 
+  <actions>
+    <action id="GenerateTopLevelFunction"
+            class="org.jetbrains.kotlin.playgroundijplugin.generateTopLevelFunctions.GenerateTopLevelFunctionsCallsAction"
+            text="Generate Top Level Function"
+            description="Generates a basic top level function in a Kotlin file">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
 </idea-plugin>
